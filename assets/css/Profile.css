@@ -1,157 +1,330 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Hồ sơ cá nhân</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Profile.css">
-</head>
-<body>
+/* RESET CƠ BẢN */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/logo.jpg" alt="logo">
-            </div>
-            <div class="nav-right">
-                <div class="language-currency">
-                    <img src="images/Anh_VN.webp" alt="Việt Nam">
-                    <span>VND</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <img src="images/Avatar.png" alt="avatar" class="avatar">
-            </div>
-        </nav>
-    </div>
-</header>
+body {
+    font-size: 12px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+}
 
-<!-- PROFILE -->
-<section class="profile-section">
-    <div class="container">
-        <div class="profile-card">
-            <div class="profile-header">
-                <div class="profile-info">
-                    <img src="images/Avatar.png" alt="avatar" class="profile-avatar">
-                    <div>
-                        <h1>THÔNG TIN CÁ NHÂN</h1>
-                        <p>Vui lòng điền đầy đủ các thông tin.</p>
-                    </div>
-                </div>
-                <button class="edit-btn"><i class="fa-solid fa-pen"></i> Chỉnh sửa</button>
-            </div>
+/* CONTAINER CHUNG */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-            <form class="profile-form">
-                <div class="form-group">
-                    <label>Họ</label>
-                    <input type="text" placeholder="Nguyễn">
-                </div>
+/* HEADER */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
 
-                <div class="form-group">
-                    <label>Tên</label>
-                    <input type="text" placeholder="Anh">
-                </div>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-                <div class="form-group">
-                    <label>Số CCCD</label>
-                    <input type="text" placeholder="087189821975">
-                </div>
+.logo img {
+    height: 40px;
+}
 
-                <div class="form-group">
-                    <label>Số điện thoại</label>
-                    <input type="text" placeholder="+84 00 000 000">
-                </div>
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-                <div class="form-group">
-                    <label>Giới tính</label>
-                    <select>
-                        <option>Nam</option>
-                        <option>Nữ</option>
-                        <option>Khác</option>
-                    </select>
-                </div>
+.language-currency {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #555;
+}
 
-                <div class="form-group">
-                    <label>Ngày sinh</label>
-                    <input type="date" value="2000-01-01">
-                </div>
+.language-currency img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
 
-                <div class="form-group full-width">
-                    <label>Quốc gia</label>
-                    <input type="text" placeholder="Việt Nam">
-                </div>
+.avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #eee;
+}
 
-                <div class="form-group full-width">
-                    <label>Địa chỉ</label>
-                    <input type="text" placeholder="01 Đường Võ Văn Ngân, TP.HCM">
-                </div>
+/* PROFILE SECTION */
+.profile-section {
+    padding: 40px 0 80px;
+}
 
-                <div class="form-buttons">
-                    <button type="button" class="discard">Hủy</button>
-                    <button type="submit" class="save">Lưu thay đổi</button>
-                </div>
-            </form>
+.profile-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px 40px;
+}
 
-        </div>
-    </div>
-</section>
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 25px;
+}
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="container footer-grid">
-        <div class="footer-col">
-            <h4>Khám phá</h4>
-            <ul>
-                <li>Điểm đến nổi bật</li>
-                <li>Kỳ nghỉ hè</li>
-                <li>Du lịch mùa đông</li>
-                <li>Ưu đãi cuối tuần</li>
-                <li>Kỳ nghỉ gia đình</li>
-            </ul>
-        </div>
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-        <div class="footer-col">
-            <h4>Loại chỗ ở</h4>
-            <ul>
-                <li>Khách sạn</li>
-                <li>Căn hộ</li>
-                <li>Biệt thự</li>
-                <li>Nhà gỗ</li>
-                <li>Lều Glamping</li>
-                <li>Nhà vòm</li>
-            </ul>
-        </div>
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f0f0f0;
+    transition: transform 0.2s ease;
+}
 
-        <div class="footer-col">
-            <h4>Hỗ trợ</h4>
-            <ul>
-                <li>Trung tâm trợ giúp</li>
-                <li>Hỗ trợ trực tuyến</li>
-                <li>Câu hỏi thường gặp</li>
-                <li>Liên hệ</li>
-            </ul>
-        </div>
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
 
-        <div class="footer-col">
-            <h4>Liên hệ</h4>
-            <ul class="contact-info">
-                <li><i class="fa-solid fa-phone"></i> +84 151 151 151</li>
-                <li><i class="fa-solid fa-envelope"></i> support@nhom15.com</li>
-            </ul>
-            <div class="social-icons">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-twitter"></i>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <p class="copyright">©NHOM15. Tất cả các quyền thuộc quyền sở hữu của nhóm .</p>
-</footer>
+.profile-info h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+}
 
-</body>
-</html>
+.profile-info p {
+    font-size: 13px;
+    color: #777;
+}
 
+/* Nút Chỉnh sửa */
+.edit-btn {
+    background-color: transparent;
+    border: 1.5px solid #2dc0e8;
+    color: #2dc0e8;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.edit-btn i {
+    font-size: 12px;
+}
+
+.edit-btn:hover {
+    background-color: #2dc0e8;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(45,192,232,0.25);
+}
+
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.profile-info h2 {
+    font-size: 18px;
+    color: #222;
+}
+
+.profile-info p {
+    font-size: 13px;
+    color: #888;
+}
+
+.edit-btn {
+    background: none;
+    border: 1px solid #2dc0e8;
+    color: #2dc0e8;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+    background-color: #2dc0e8;
+    color: white;
+}
+
+/* FORM */
+.profile-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #444;
+}
+
+.form-group input,
+.form-group select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2dc0e8;
+    outline: none;
+}
+
+.form-group.full-width {
+    grid-column: 1 / 3;
+}
+
+/* FORM BUTTONS */
+.form-buttons {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-buttons .discard {
+    background: #f1f1f1;
+    color: #555;
+}
+
+.form-buttons .save {
+    background: #2dc0e8;
+    color: white;
+}
+
+.form-buttons .save:hover {
+    background: #249aba;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #111;
+    color: #bbb;
+    padding: 50px 0 30px;
+    font-size: 13px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-col ul li {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.footer-col ul li:hover {
+    color: #2dc0e8;
+}
+
+.footer-col .contact-info li i {
+    margin-right: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons i {
+    border: 1px solid #555;
+    padding: 6px;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    background: #2dc0e8;
+    color: white;
+    border-color: #2dc0e8;
+}
+
+.footer hr {
+    border: none;
+    height: 1px;
+    background: #333;
+    margin: 30px 0 20px;
+}
+
+.footer .copyright {
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+}
